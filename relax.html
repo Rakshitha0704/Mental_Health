@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Relax - TranquilMind</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: linear-gradient(to top, #a3c9f1, #d0f0fd);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: background 0.5s;
+    }
+
+    body.dark-mode {
+      background: linear-gradient(to top, #2c3e50, #34495e);
+    }
+
+    /* Clouds */
+    .cloud {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: floatCloud 60s linear infinite;
+      z-index: 1;
+    }
+
+    .cloud::before, .cloud::after {
+      content: '';
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+    }
+
+    .cloud1 { width: 120px; height: 60px; top: 10%; left: -150px; }
+    .cloud1::before { width: 60px; height: 60px; top: -20px; left: 20px; }
+    .cloud1::after { width: 80px; height: 80px; top: 10px; left: 40px; }
+
+    .cloud2 { width: 100px; height: 50px; top: 40%; left: -200px; animation-duration: 80s;}
+    .cloud2::before { width: 50px; height: 50px; top: -15px; left: 15px; }
+    .cloud2::after { width: 70px; height: 70px; top: 5px; left: 35px; }
+
+    .cloud3 { width: 150px; height: 70px; top: 70%; left: -250px; animation-duration: 100s;}
+    .cloud3::before { width: 80px; height: 80px; top: -20px; left: 30px; }
+    .cloud3::after { width: 90px; height: 90px; top: 10px; left: 50px; }
+
+    @keyframes floatCloud {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(120vw); }
+    }
+
+    /* Trees */
+    .tree {
+      position: absolute;
+      bottom: 0;
+      width: 60px;
+      height: 100px;
+      background: #2e8b57;
+      border-radius: 10px;
+      animation: sway 3s ease-in-out infinite alternate;
+      z-index: 1;
+    }
+
+    .tree::before {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: -20px;
+      width: 100px;
+      height: 60px;
+      background: #228b22;
+      border-radius: 50%;
+    }
+
+    .tree1 { left: 10%; animation-delay: 0s; }
+    .tree2 { left: 40%; animation-delay: 0.5s; }
+    .tree3 { left: 70%; animation-delay: 1s; }
+
+    @keyframes sway {
+      0% { transform: rotate(-3deg); }
+      100% { transform: rotate(3deg); }
+    }
+
+    /* Center Relax Message */
+    .message {
+      position: relative;
+      z-index: 10;
+      color: #fff;
+      font-size: 2rem;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    /* Dark Mode Button */
+    .dark-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      background: rgba(0,0,0,0.3);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+      z-index: 10;
+    }
+
+    /* Video Section */
+    .videos {
+      position: relative;
+      z-index: 10;
+      margin-top: 40px;
+      width: 90%;
+      max-width: 1200px;
+    }
+
+    .video-blocks {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .video-card {
+      background-color: rgba(255,255,255,0.1);
+      padding: 10px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      flex: 1 1 30%;
+      min-width: 280px;
+    }
+
+    .video-card iframe {
+      width: 100%;
+      height: 180px;
+      border-radius: 10px;
+    }
+
+    .video-card p {
+      margin-top: 8px;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    @media (max-width: 900px) {
+      .video-card iframe {
+        height: 160px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .video-card iframe {
+        height: 140px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Clouds -->
+  <div class="cloud cloud1"></div>
+  <div class="cloud cloud2"></div>
+  <div class="cloud cloud3"></div>
+
+  <!-- Trees -->
+  <div class="tree tree1"></div>
+  <div class="tree tree2"></div>
+  <div class="tree tree3"></div>
+
+  <!-- Relax Message -->
+  <div class="message">Take a deep breath and relax 🌿</div>
+
+  <!-- Dark Mode Toggle -->
+  <button class="dark-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+  <!-- Meditation Videos -->
+  <div class="videos">
+    <h2 style="color:white;text-align:center; margin-bottom:20px;">Guided Meditation</h2>
+    <div class="video-blocks">
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/inpok4MKVLM" title="Meditation 1" allowfullscreen></iframe>
+        <p>Meditation 1</p>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/inpok4MKVLM?start=0" title="Meditation 2" allowfullscreen></iframe>
+        <p>Meditation 2</p>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/ZToicYcHIOU" title="Meditation 3" allowfullscreen></iframe>
+        <p>Meditation 3</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+
+</body>
+</html>

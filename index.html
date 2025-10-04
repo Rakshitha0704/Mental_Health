@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="back..jpg" type="image/jpeg">
+
+  <title>TranquilMind</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <body>
+  <header>
+    <h1>TranquilMind - Mental Wellness Hub</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="selfcare.html">Self Care</a></li>
+        <li><a href="relax.html">Relax</a></li>
+        <li><a href="http://localhost:8501" target="_blank">Chatbot</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="full-image"></div>
+
+  <section class="content">
+    <p>Page content starts here...</p>
+  </section>
+
+
+
+
+<!-- Chatbot Button -->
+<a href="http://localhost:8501" target="_blank">
+  <button style="
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: rgb(152, 119, 215);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    display: flex; 
+  ">
+    💬 TranquilTalk
+  </button>
+</a>
+<!-- Nature Sound Player -->
+<div class="sound-control">
+  <button id="sound-btn">Play Nature Sound 🌿</button>
+  <audio id="nature-sound" loop>
+    <source src="nature.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<style>
+  .sound-control {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10;
+  }
+
+  #sound-btn {
+    padding: 10px 15px;
+    background: rgba(0,0,0,0.3);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  #sound-btn:hover {
+    background: rgba(0,0,0,0.5);
+  }
+</style>
+
+<script>
+  const audio = document.getElementById('nature-sound');
+  const btn = document.getElementById('sound-btn');
+
+  btn.addEventListener('click', () => {
+    if(audio.paused) {
+      audio.play();
+      btn.textContent = "Pause Nature Sound";
+    } else {
+      audio.pause();
+      btn.textContent = "Play Nature Sound";
+    }
+  });
+</script>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
