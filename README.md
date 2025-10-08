@@ -15,14 +15,11 @@ Features
 
 2. Relax Section
 - Three main meditation video blocks (YouTube embedded).  
-- Mood-based suggested videos dynamically displayed based on current mood.
 - Animated clouds and trees for a calming UI.
 - Background nature sounds (play/pause) for immersive experience.
-- Fully responsive and mobile-friendly layout.
 
 3. Interactive UI
 - Smooth animations (clouds float, trees sway).  
-- Centralized relaxing message.  
 - Buttons and controls with intuitive styling.  
 
  4. Chatbot Integration
@@ -34,5 +31,5 @@ Tech Stack
 - LocalStorage – Stores user mood for personalized suggestions.  
 - Embedded YouTube Videos – For guided meditation content.  
 - Git & GitHub – Version control and deployment.  
-- GitHub Pages – Optional live hosting.
+
 
